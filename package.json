@@ -1,6 +1,6 @@
 {
   "nativescript": {
-    "id": "org.nativescript.infoCesoft",
+    "id": "com.manzu.infocesoft",
     "tns-android": {
       "version": "5.4.0"
     },

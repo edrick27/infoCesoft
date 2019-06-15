@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "482760889586",
+    "firebase_url": "https://infocesoft.firebaseio.com",
+    "project_id": "infocesoft",
+    "storage_bucket": "infocesoft.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:482760889586:android:7c7246f12166822f",
+        "android_client_info": {
+          "package_name": "com.manzu.infocesoft"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "482760889586-su22i1f9hvgjl5gr1fq8o16ts6s7ocu2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCElQdLB2BZjVlPioFS-0CYcz2oSVTG6rk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "482760889586-su22i1f9hvgjl5gr1fq8o16ts6s7ocu2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
