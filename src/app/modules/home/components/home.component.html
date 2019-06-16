@@ -1,1 +1,28 @@
-<Label text="home" textWrap="true"></Label>
+<ActionBar flat="true" title="InfoCEsoft" class="actionBar-color"></ActionBar>
+<StackLayout>
+  <StackLayout>
+    <android>
+      <SegmentedBar [items]="segmentedBarItems" 
+        selectedIndex="0" 
+        (selectedIndexChange)="ChangetabIndexAndroid($event)"
+        class="tabview-android">
+      </SegmentedBar>
+    </android>
+    <ios>
+      <StackLayout class="ios-tabview" orientation="horizontal">
+        <Button class="tabview-ios" [ngClass]="(selectedItemIndex == 0) ? 'tab-selected' : '' "
+          (tap)="ChangetabIndexIOS(0)" text="INFORMACIÓN">
+        </Button>
+        <Button class="tabview-ios" [ngClass]="(selectedItemIndex == 1) ? 'tab-selected' : '' "
+          (tap)="ChangetabIndexIOS(1)" text="HISTÓRICO">
+        </Button>
+      </StackLayout>
+    </ios>
+  </StackLayout>
+  <StackLayout [visibility]="selectedItemIndex === 0 ? 'visible' : 'collapsed'">
+    <Label text="tab 1" textWrap="true"></Label>
+  </StackLayout>
+  <StackLayout [visibility]="selectedItemIndex === 1 ? 'visible' : 'collapsed'">
+    <Label text="tab 2" textWrap="true"></Label>
+  </StackLayout>
+</StackLayout>
