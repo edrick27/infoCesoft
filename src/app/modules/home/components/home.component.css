@@ -1,3 +1,15 @@
+.box{
+    border-radius: 50px;
+    width: 90%;
+    height: 95; 
+}
+
+.notify-label{
+    margin: 5% 7% 0% 7%;
+    font-size: 18sp;
+    font-weight: 400;
+    white-space: normal;
+}
 
 .actionBar-color{
     border-width: 1px;

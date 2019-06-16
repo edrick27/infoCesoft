@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SegmentedBarItem, SegmentedBar } from "tns-core-modules/ui/segmented-bar/segmented-bar";
+import { ObservableArray } from 'tns-core-modules/data/observable-array/observable-array';
 
 @Component({
   selector: 'ns-home',
@@ -8,6 +9,7 @@ import { SegmentedBarItem, SegmentedBar } from "tns-core-modules/ui/segmented-ba
 })
 export class HomeComponent implements OnInit {
 
+  private dataNotification$: ObservableArray<any>;
   public segmentedBarItems: Array<SegmentedBarItem>;
   private selectedItemIndex: number = 0;
 
@@ -15,6 +17,16 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.buildSegmentedBarItems();
+    this.getNotifications();
+  }
+
+  getNotifications(){
+    let array = [
+      { name : "Pago atrasado" },
+      { name : "nueva función agregada" },
+      { name : "arreglo de inconveniente con la facturas" }
+    ]
+    this.dataNotification$ = new ObservableArray(array);
   }
 
   private buildSegmentedBarItems() {
@@ -34,6 +46,10 @@ export class HomeComponent implements OnInit {
   public ChangetabIndexAndroid(args) {
     let segmetedBar = <SegmentedBar>args.object;
     this.selectedItemIndex = segmetedBar.selectedIndex;
+  }
+
+  get dataNotification(): ObservableArray<any> {
+    return this.dataNotification$;
   }
 
 }

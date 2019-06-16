@@ -20,7 +20,17 @@
     </ios>
   </StackLayout>
   <StackLayout [visibility]="selectedItemIndex === 0 ? 'visible' : 'collapsed'">
-    <Label text="tab 1" textWrap="true"></Label>
+      <RadListView height="100%" [items]="dataNotification">
+      <ng-template tkListItemTemplate let-item="item">
+        <StackLayout>
+            <CardView class="box" margin="10" elevation="20" radius="20">
+              <StackLayout>
+                  <Label class="notify-label" text="{{item.name}}" textWrap="true"></Label>
+              </StackLayout>
+            </CardView>
+        </StackLayout>
+      </ng-template>
+  </RadListView>
   </StackLayout>
   <StackLayout [visibility]="selectedItemIndex === 1 ? 'visible' : 'collapsed'">
     <Label text="tab 2" textWrap="true"></Label>
