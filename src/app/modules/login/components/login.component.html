@@ -5,7 +5,7 @@
       <StackLayout class="layoutcenter" cornerRadius="15" elevation="6">
           <TextField hint="Codigo" text=""></TextField>
           <label text="{{loginError}}" class="login-error"></label>
-          <Button (tap)="submit()" [class]="'btnlogin'" text="INICIAR SESIÓN"
+          <Button (tap)="goHome()" [class]="'btnlogin'" text="INICIAR SESIÓN"
               textWrap="true" elevation="10" cornerRadius="15" isEnabled="true">
           </Button>
       </StackLayout>

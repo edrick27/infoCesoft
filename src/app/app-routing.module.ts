@@ -8,7 +8,10 @@ const routes: Routes = [
         path: 'login',
         loadChildren: './modules/login/login.module#LoginModule'
     },
-  
+    {
+        path: 'home',
+        loadChildren: './modules/home/home.module#HomeModule'
+    },
 ];  
 
 
