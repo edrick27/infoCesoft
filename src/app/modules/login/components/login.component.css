@@ -1,0 +1,73 @@
+TextField {
+    margin: 10;
+    margin-top: 10%;
+    padding: 10;
+}
+Image {
+    margin-top: 5%;
+    margin-left: 0;
+    margin-right: 0;
+}
+Button {
+    margin: 10;
+    padding: 5;
+}
+
+.layoutlogin{
+    background-color: #4d69f7;
+}
+
+ActionBar{
+    background-color:#bdcefc ;
+}
+.coloraction{
+    color: #4475fc;
+    font-size: 15px;
+}
+.title{
+    font-size: 42sp;
+    color: #161616;
+    text-align: center;
+    margin-top: 15dp;
+    font-weight: bold;
+    font-family: sans-serif
+}
+.layoutcenter{
+    margin: 15dp 20dp 15dp 20dp;
+    padding: 20%;
+    background-color: #ffffff;
+    border-radius: 12dp;
+    height: 192dp;
+    width: 95%;
+
+}
+
+.btnlogin{
+    background-color: #e33486;
+    color: #ffffff;
+    margin: 0dp 16dp 48dp 16dp;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 24dp;
+    width: 95%;
+    height: 48dp;
+}
+.btnlogin:active{
+    background-color: #b83b75;
+    color: #dfe3e6;
+    margin: 0dp 16dp 48dp 16dp;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 24dp;
+    width: 95%;
+    height: 48dp;
+}
+
+.login-error{
+    color: #e33486;
+    font-size: 18;
+    width: 100%;
+}
+.gradient{
+    background: linear-gradient(to bottom, #819ee7, #83a4f6d0);
+}

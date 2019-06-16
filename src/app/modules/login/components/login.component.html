@@ -1,0 +1,13 @@
+<ScrollView>
+  <StackLayout height="100%" class="gradient" orientation="vertical">
+      <Image src="https://dingdonecdn.nyc3.digitaloceanspaces.com/demov2/tickets2dd5cd2020067f6dd.jpg" stretch="none" horizontalAlignment="center"></Image>
+      <label class="title" text="Bienvenido!"></label>
+      <StackLayout class="layoutcenter" cornerRadius="15" elevation="6">
+          <TextField hint="Codigo" text=""></TextField>
+          <label text="{{loginError}}" class="login-error"></label>
+          <Button (tap)="submit()" [class]="'btnlogin'" text="INICIAR SESIÓN"
+              textWrap="true" elevation="10" cornerRadius="15" isEnabled="true">
+          </Button>
+      </StackLayout>
+  </StackLayout>
+</ScrollView>
