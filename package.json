@@ -1,11 +1,11 @@
 {
   "nativescript": {
     "id": "com.manzu.infocesoft",
-    "tns-android": {
-      "version": "5.4.0"
-    },
     "tns-ios": {
       "version": "5.4.1"
+    },
+    "tns-android": {
+      "version": "5.4.0"
     }
   },
   "description": "NativeScript Application",
@@ -28,6 +28,7 @@
     "nativescript-ui-listview": "^6.4.0",
     "reflect-metadata": "~0.1.12",
     "rxjs": "~6.5.0",
+    "rxjs-compat": "^6.5.2",
     "tns-core-modules": "~5.4.0",
     "zone.js": "~0.9.1"
   },

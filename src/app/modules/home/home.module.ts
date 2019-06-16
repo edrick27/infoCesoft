@@ -4,7 +4,7 @@ import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { NativeScriptCommonModule } from "nativescript-angular/common";
 import { HomeComponent } from './components/home.component';
 import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular";
-
+ 
 export const routes: Routes = [
   {
     path: '',
