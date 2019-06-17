@@ -12,7 +12,7 @@ export class LoginService {
   public verifyCredencials(code): Promise<any> {
     return new Promise((resolve, reject) => {
       firebase.getCurrentPushToken().then((token: string) => {
-        this.http.post(environment.apiurl + "userAuth", {code: code, token: token}).subscribe(async data => {
+        this.http.post(environment.apiurl + "authUser", {code: code, token: token}).subscribe(async data => {
           resolve(data);
         });
       });
