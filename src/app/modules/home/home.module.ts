@@ -2,10 +2,14 @@ import { NgModule } from '@angular/core';
 import { Routes } from '@angular/router';
 import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { NativeScriptCommonModule } from "nativescript-angular/common";
-import { HomeComponent } from './components/home.component';
-import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular";
+import { NativeScriptFormsModule } from "nativescript-angular/forms";
+import { CommonModule } from '@angular/common';
 import { NativeScriptHttpModule } from "nativescript-angular/http";
+import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular";
+
+import { HomeComponent } from './components/home.component';
 import { HomeService } from './services/home.service';
+
 
 export const routes: Routes = [
   {
@@ -19,7 +23,9 @@ export const routes: Routes = [
     NativeScriptCommonModule,
     NativeScriptRouterModule.forChild(routes),
     NativeScriptUIListViewModule,
-    NativeScriptHttpModule
+    NativeScriptHttpModule,
+    NativeScriptFormsModule,
+    CommonModule
   ],
   declarations: [HomeComponent],
   providers:[

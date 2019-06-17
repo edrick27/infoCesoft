@@ -3,9 +3,10 @@ import { Routes } from '@angular/router';
 import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { NativeScriptCommonModule } from "nativescript-angular/common";
 import { NativeScriptFormsModule } from "nativescript-angular/forms";
-import { LoginComponent } from './components/login.component';
 import { CommonModule } from '@angular/common';
 import { NativeScriptHttpModule } from "nativescript-angular/http";
+
+import { LoginComponent } from './components/login.component';
 import { LoginService } from './services/login.service';
 
 export const routes: Routes = [
@@ -21,8 +22,8 @@ export const routes: Routes = [
     NativeScriptCommonModule,
     NativeScriptRouterModule.forChild(routes),
     NativeScriptFormsModule,
-    NativeScriptHttpModule,
-    CommonModule
+    CommonModule,
+    NativeScriptHttpModule
   ],
   declarations: [LoginComponent],
   providers:[
