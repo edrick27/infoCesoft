@@ -3,7 +3,6 @@ import { registerElement } from 'nativescript-angular/element-registry';
 import { CardView } from 'nativescript-cardview';
 import * as firebase from "nativescript-plugin-firebase"
 
-
 registerElement('CardView', () => CardView);
 
 @Component({

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Page } from "tns-core-modules/ui/page";
 import { RouterExtensions } from 'nativescript-angular/router';
 import * as firebase from 'nativescript-plugin-firebase';
+import { LoginService } from "../services/login.service";
 
 @Component({
   selector: 'ns-login',
@@ -15,6 +16,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private page: Page,
     private router: RouterExtensions,
+    private service: LoginService,
   ) {
     this.page.actionBarHidden = true;
   }
@@ -25,11 +27,13 @@ export class LoginComponent implements OnInit {
 
   public goHome() {
     console.log("goHome goHome goHome");
-    
-    // firebase.getCurrentPushToken().then(($token: string) => {
-    //   alert("$token ==>"+$token);
-    // });
-    this.router.navigate(["/home"], { clearHistory: true });
+    this.service.verifyCredencials("s1").then((result)=>{
+      if(result.response){
+        this.router.navigate(["/home"], { clearHistory: true });
+      }else{
+        this.loginError = result.error;
+      } 
+    });
   }
 
   private initPushNotification() {
