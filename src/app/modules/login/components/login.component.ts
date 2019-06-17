@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Page} from "tns-core-modules/ui/page";
-import { RouterExtensions  } from 'nativescript-angular/router';
+import { Page } from "tns-core-modules/ui/page";
+import { RouterExtensions } from 'nativescript-angular/router';
+import * as firebase from 'nativescript-plugin-firebase';
 
 @Component({
   selector: 'ns-login',
@@ -9,7 +10,7 @@ import { RouterExtensions  } from 'nativescript-angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  private loginError:string;
+  private loginError: string;
 
   constructor(
     private page: Page,
@@ -19,9 +20,28 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.initPushNotification();
   }
 
-  public goHome(){
+  public goHome() {
+    console.log("goHome goHome goHome");
+    
+    // firebase.getCurrentPushToken().then(($token: string) => {
+    //   alert("$token ==>"+$token);
+    // });
     this.router.navigate(["/home"], { clearHistory: true });
+  }
+
+  private initPushNotification() {
+    firebase.init({
+      persist: false,
+      onMessageReceivedCallback: (message) => {
+        if (message.foreground != true) {
+
+        } else {
+
+        }
+      },
+    });
   }
 }
