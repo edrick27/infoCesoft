@@ -41,7 +41,6 @@ export class LoginComponent implements OnInit {
     console.log("goHome goHome goHome");
     this.service.verifyCredencials(this.idcliente, this.token, this.os).then((result)=>{
       console.log("verifyCredencials",result);
-      
       if(result.success){
         this.router.navigate(["/home"], { clearHistory: true });
       }else{
