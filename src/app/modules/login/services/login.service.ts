@@ -9,12 +9,11 @@ export class LoginService {
 
   constructor(private http: HttpClient) { }
 
-  public verifyCredencials(code): Promise<any> {
+  public verifyCredencials(idcliente, token, os): Promise<any> {
     return new Promise((resolve, reject) => {
-      firebase.getCurrentPushToken().then((token: string) => {
-        this.http.post(environment.apiurl + "authUser", {code: code, token: token}).subscribe(async data => {
-          resolve(data);
-        });
+      let data = { idcliente: idcliente, token: token, os: os };
+      this.http.post(environment.apiurl + "authUser", data).subscribe(async data => {
+        resolve(data);
       });
     });
   }

@@ -3,6 +3,7 @@ import { Page } from "tns-core-modules/ui/page";
 import { RouterExtensions } from 'nativescript-angular/router';
 import * as firebase from 'nativescript-plugin-firebase';
 import { LoginService } from "../services/login.service";
+import { device } from "tns-core-modules/platform";
 
 @Component({
   selector: 'ns-login',
@@ -12,6 +13,9 @@ import { LoginService } from "../services/login.service";
 export class LoginComponent implements OnInit {
 
   private loginError: string;
+  private token: string;
+  private os: string;
+  private idcliente: string;
 
   constructor(
     private page: Page,
@@ -23,11 +27,19 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.initPushNotification();
+    this.getToken();
+  }
+
+  private getToken(){
+    firebase.getCurrentPushToken().then((token: string) => {
+      this.token = token;
+      this.os = device.os;
+    });
   }
 
   public goHome() {
     console.log("goHome goHome goHome");
-    this.service.verifyCredencials("s1").then((result)=>{
+    this.service.verifyCredencials(this.idcliente, this.token, this.os).then((result)=>{
       console.log("verifyCredencials",result);
       
       if(result.success){
