@@ -10,7 +10,7 @@ import { HomeService } from "../services/home.service";
 })
 export class HomeComponent implements OnInit {
 
-  private dataNotification$: ObservableArray<any>;
+  private dataNotification$: ObservableArray<any> = new ObservableArray([]);
   public segmentedBarItems: Array<SegmentedBarItem>;
   private selectedItemIndex: number = 0;
 
@@ -49,5 +49,4 @@ export class HomeComponent implements OnInit {
   get dataNotification(): ObservableArray<any> {
     return this.dataNotification$;
   }
-
 }
